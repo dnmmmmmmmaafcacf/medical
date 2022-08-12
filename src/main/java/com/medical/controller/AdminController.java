@@ -17,4 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/medical/admin")
 public class AdminController {
 
+
+//    kda
 }
