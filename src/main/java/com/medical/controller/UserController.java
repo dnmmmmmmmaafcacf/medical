@@ -1,30 +1,16 @@
 package com.medical.controller;
 
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 
 
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import com.baomidou.mybatisplus.extension.api.R;
 import com.medical.entity.User;
 import com.medical.mapper.UserMapper;
 import com.medical.service.UserService;
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpSession;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
-import javax.servlet.http.HttpSession;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -39,8 +25,13 @@ import java.util.Map;
 @RequestMapping("/medical/user")
 public class UserController {
     @Autowired
+
+    UserMapper userMapper;
+
+    @Autowired
     UserService userService;
 
+<<<<<<< HEAD
     @PostMapping("/login")
     public Map<String,Object> login(HttpSession session, String username,String password){
         User list = userService.loginUser(username,password);
@@ -53,12 +44,29 @@ public class UserController {
 
             return map;
         } else {
+=======
+    @PostMapping("/userUpdate")
+    public Map<String,Object> userUpdate(@RequestBody User user) {
+        int i = userMapper.userUpdate(user);
+        HashMap<String,Object> map= new HashMap<>();
+        if (i!=0){
+>>>>>>> ef8f169dca45f32b7c6890052506b59d3e87fd73
             map.put("code",200);
-            map.put("msg","登录成功");
-            map.put("data",list);
+            map.put("mag","修改成功");
+            map.put("data",i);
+            return map;
+        }else {
+            map.put("code",500);
+            map.put("mag","修改失败");
+            map.put("data",i);
+
             return map;
         }
 
     }
+
+
+
+
 
 }

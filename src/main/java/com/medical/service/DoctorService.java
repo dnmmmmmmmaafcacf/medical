@@ -14,5 +14,6 @@ import java.util.List;
  * @since 2022-08-11
  */
 public interface DoctorService extends IService<Doctor> {
+    //查询医生
     List<Doctor> likeDoAndDH();
 }

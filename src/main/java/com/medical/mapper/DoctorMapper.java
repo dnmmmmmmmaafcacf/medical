@@ -18,5 +18,6 @@ import java.util.List;
  */
 @Repository
 public interface DoctorMapper extends BaseMapper<Doctor> {
+    //查询医生
     List<Doctor> likeDoAndDH();
 }
