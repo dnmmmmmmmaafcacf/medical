@@ -2,4 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.medical.mapper.ReviewMapper">
 
+    <select id="selectMunityReviewByUser" resultType="com.medical.entity.Review">
+        SELECT*FROM review WHERE uid=#{uid} AND mid IS not NULL
+    </select>
+
+    <select id="selectDrugReviewByUser" resultType="com.medical.entity.Review">
+        SELECT*FROM review WHERE uid=#{uid} and drid is NOT NULL
+    </select>
+
 </mapper>

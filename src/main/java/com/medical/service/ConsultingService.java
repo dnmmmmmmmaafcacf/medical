@@ -12,5 +12,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2022-08-11
  */
 public interface ConsultingService extends IService<Consulting> {
+    public static final String await = "await";
+    public static final String finish = "finish";
 
 }

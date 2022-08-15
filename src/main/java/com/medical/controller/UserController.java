@@ -43,10 +43,6 @@ public class UserController {
 
     @PostMapping("/login")
     public Map<String,Object> login(HttpSession session, String username,String password){
-//        QueryWrapper<User> q = new QueryWrapper<>();
-//        q.eq("username",user.getUsername());
-//        q.eq("password",user.getPassword());
-//        List list = userService.listObjs(q);
         User list = userService.loginUser(username,password);
         session.setAttribute("user",list);
         HashMap<String, Object> map = new HashMap<>();
