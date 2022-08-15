@@ -2,7 +2,11 @@ package com.medical.service;
 
 import com.medical.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
+
 import org.springframework.stereotype.Service;
+
+import org.apache.ibatis.annotations.Param;
+
 
 import java.util.List;
 
@@ -16,7 +20,17 @@ import java.util.List;
  */
 @Service
 public interface UserService extends IService<User> {
-    public User getByName(String name);
+
+    User loginUser(String username,String password);
+
+ public User getByName(String name);
     public boolean isExist(String name);
+
+
+    int userUpdate(User user);
+
+//    User selectTel(int tel);
+
+
 }
 

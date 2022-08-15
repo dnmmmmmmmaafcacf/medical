@@ -7,6 +7,9 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+import java.util.List;
+
 /**
  * <p>
  * 用户表 服务实现类
@@ -16,6 +19,7 @@ import org.springframework.stereotype.Service;
  * @since 2022-08-11
  */
 @Service
+
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
 @Autowired
 UserMapper userMapper;
@@ -24,7 +28,24 @@ UserMapper userMapper;
         return null!=user;
     }
 
-    public User getByName(String name){
+public class UserServiceImpl extends ServiceImpl<UserMapper,User> implements UserService {
+    @Autowired
+    UserMapper userMapper;
+
+
+    @Override
+    public User loginUser(String username, String password) {
+        return userMapper.loginUser(username,password);
+    }
+
+    @Override
+    public int userUpdate(User user) {
+        return userMapper.userUpdate(user);
+    }
+ public User getByName(String name){
         return userMapper.selectUser(name);
     }
+
+
+   
 }
