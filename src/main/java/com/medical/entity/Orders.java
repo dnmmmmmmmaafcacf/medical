@@ -20,6 +20,8 @@ package com.medical.entity;
 
     private static final long serialVersionUID = 1L;
 
+    private Integer id;
+
     private Integer uid;
 
             /**
@@ -30,7 +32,11 @@ package com.medical.entity;
             /**
             * 订单编号
             */
-    private Integer orderNumber;
+    private String orderNumber;
+
+
+    private String status;
+
 
 
 }

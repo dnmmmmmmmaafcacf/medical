@@ -2,6 +2,9 @@ package com.medical.entity;
 
     import java.time.LocalDateTime;
     import java.io.Serializable;
+    import java.util.Date;
+
+    import com.fasterxml.jackson.annotation.JsonFormat;
     import lombok.Data;
     import lombok.EqualsAndHashCode;
     import lombok.experimental.Accessors;
@@ -20,16 +23,17 @@ package com.medical.entity;
     public class Consulting implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
+    private int id;
             /**
             * 创建时间
             */
-    private LocalDateTime createDate;
+   @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    private Date createDate;
 
             /**
             * 咨询内容
             */
-    private String describe;
+    private String describes;
 
             /**
             * 咨询状态
@@ -50,6 +54,5 @@ package com.medical.entity;
             * 医生id
             */
     private Integer doid;
-
 
 }

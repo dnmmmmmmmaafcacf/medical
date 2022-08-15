@@ -3,6 +3,8 @@ package com.medical.mapper;
 import com.medical.entity.Category;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
+import java.util.List;
+
 /**
  * <p>
  * 药品分类 Mapper 接口

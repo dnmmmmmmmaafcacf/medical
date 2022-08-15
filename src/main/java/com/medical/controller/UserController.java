@@ -32,11 +32,26 @@ public class UserController {
     @Autowired
     UserService userService;
 
+<<<<<<< HEAD
+    @PostMapping("/login")
+    public Map<String,Object> login(HttpSession session, String username,String password){
+        User list = userService.loginUser(username,password);
+        session.setAttribute("user",list);
+        HashMap<String, Object> map = new HashMap<>();
+        if (list.equals("")){
+            map.put("code",500);
+            map.put("msg","登录失败");
+            map.put("data",list);
+
+            return map;
+        } else {
+=======
     @PostMapping("/userUpdate")
     public Map<String,Object> userUpdate(@RequestBody User user) {
         int i = userMapper.userUpdate(user);
         HashMap<String,Object> map= new HashMap<>();
         if (i!=0){
+>>>>>>> ef8f169dca45f32b7c6890052506b59d3e87fd73
             map.put("code",200);
             map.put("mag","修改成功");
             map.put("data",i);

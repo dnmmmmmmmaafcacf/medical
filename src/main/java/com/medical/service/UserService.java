@@ -6,6 +6,8 @@ import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
+import java.util.List;
+
 /**
  * <p>
  * 用户表 服务类
@@ -16,6 +18,7 @@ import java.util.List;
  */
 public interface UserService extends IService<User> {
     User loginUser(String username,String password);
+       
 
 
 
@@ -23,6 +26,7 @@ public interface UserService extends IService<User> {
     int userUpdate(User user);
 
 //    User selectTel(int tel);
+
 
 
 }

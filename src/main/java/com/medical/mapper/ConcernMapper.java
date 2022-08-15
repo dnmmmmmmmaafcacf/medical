@@ -12,5 +12,4 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @since 2022-08-11
  */
 public interface ConcernMapper extends BaseMapper<Concern> {
-
 }
