@@ -2,14 +2,13 @@ package com.medical.controller;
 
 
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+
 import com.medical.entity.User;
 import com.medical.mapper.UserMapper;
 import com.medical.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,7 +31,6 @@ public class UserController {
 
     @PostMapping("/userUpdate")
     public Map<String,Object> userUpdate(@RequestBody User user) {
-
         int i = userMapper.userUpdate(user);
         HashMap<String,Object> map= new HashMap<>();
         if (i!=0){
