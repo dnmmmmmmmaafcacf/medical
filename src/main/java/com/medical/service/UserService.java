@@ -15,6 +15,7 @@ import java.util.List;
  * @since 2022-08-11
  */
 public interface UserService extends IService<User> {
-    User checkLogin(String username,String password);
+    User loginUser(String username,String password);
+
 
 }

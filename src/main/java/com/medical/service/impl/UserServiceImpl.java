@@ -24,8 +24,12 @@ public class UserServiceImpl extends ServiceImpl<UserMapper,User> implements Use
     private UserMapper userInfoMapper;
 
 
+    @Autowired
+    UserMapper userMapper;
+
     @Override
-    public User checkLogin(String username, String password) {
-        return userInfoMapper.checkLogin(username,password);
+    public User loginUser(String username, String password) {
+        return userMapper.loginUser(username,password);
+
     }
 }

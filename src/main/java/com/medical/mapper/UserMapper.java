@@ -17,9 +17,8 @@ import java.util.List;
  * @author JiaJieTang
  * @since 2022-08-11
  */
-
-@Repository
+ 
+ 
 public interface UserMapper extends BaseMapper<User> {
-    @Select("SELECT * FROM user WHERE username=#{username} and  password= #{password}")
-    User checkLogin(@Param("username") String username, @Param("password") String password);
+    User loginUser(String username,String password);
 }
