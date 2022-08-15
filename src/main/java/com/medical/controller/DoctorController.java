@@ -27,6 +27,7 @@ public class DoctorController {
     @Autowired
     DoctorService doctorService;
 
+    //查询医生
     @RequestMapping("selDoctor")
     public Map<String,Object> selDo(){
         List<Doctor> dh = doctorService.likeDoAndDH();
