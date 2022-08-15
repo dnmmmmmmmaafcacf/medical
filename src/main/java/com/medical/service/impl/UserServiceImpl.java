@@ -19,6 +19,15 @@ import java.util.List;
  * @since 2022-08-11
  */
 @Service
+
+public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
+@Autowired
+UserMapper userMapper;
+    public boolean isExist(String name){
+        User user = getByName(name);
+        return null!=user;
+    }
+
 public class UserServiceImpl extends ServiceImpl<UserMapper,User> implements UserService {
     @Autowired
     UserMapper userMapper;
@@ -33,6 +42,10 @@ public class UserServiceImpl extends ServiceImpl<UserMapper,User> implements Use
     public int userUpdate(User user) {
         return userMapper.userUpdate(user);
     }
+ public User getByName(String name){
+        return userMapper.selectUser(name);
+    }
 
 
+   
 }
