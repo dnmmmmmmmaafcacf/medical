@@ -16,8 +16,4 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/medical/admin")
 public class AdminController {//撒大大xc
-
-    public static void main(String[] args) {
-
-    }
 }
