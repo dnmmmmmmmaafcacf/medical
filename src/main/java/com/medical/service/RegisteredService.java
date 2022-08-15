@@ -14,5 +14,5 @@ import java.util.List;
  * @since 2022-08-11
  */
 public interface RegisteredService extends IService<Registered> {
-    List<Registered> getReg();
+    Registered getReg(int uid);
 }

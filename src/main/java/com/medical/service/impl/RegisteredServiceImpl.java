@@ -24,8 +24,9 @@ public class RegisteredServiceImpl extends ServiceImpl<RegisteredMapper, Registe
     @Autowired
     RegisteredMapper registeredMapper;
 
+
     @Override
-    public List<Registered> getReg() {
-        return registeredMapper.getReg();
+    public Registered getReg(int uid) {
+        return registeredMapper.getReg(uid);
     }
 }
