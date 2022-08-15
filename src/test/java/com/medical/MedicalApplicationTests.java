@@ -10,4 +10,6 @@ class MedicalApplicationTests {
     void contextLoads() {
     }
 
+
+
 }
