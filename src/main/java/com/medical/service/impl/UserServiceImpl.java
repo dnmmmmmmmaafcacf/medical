@@ -31,5 +31,23 @@ public class UserServiceImpl extends ServiceImpl<UserMapper,User> implements Use
     public User loginUser(String username, String password) {
         return userMapper.loginUser(username,password);
 
+    @Autowired
+    UserMapper userMapper;
+
+    @Override
+    public int userUpdate(User user) {
+        return userMapper.userUpdate(user);
     }
+
+//    @Override
+//    public User selectTel(int tel) {
+//        return null;
+//    }
+
+
+//    @Override
+//    public User selectTel(int tel) {
+//        return userMapper.selectTel(tel);
+//    }
+
 }

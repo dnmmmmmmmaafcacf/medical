@@ -18,4 +18,10 @@ public interface UserService extends IService<User> {
     User loginUser(String username,String password);
 
 
+
+
+    int userUpdate(User user);
+
+//    User selectTel(int tel);
+
 }
