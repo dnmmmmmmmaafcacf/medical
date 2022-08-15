@@ -52,13 +52,6 @@ public class UserController {
             return result;
         }
     }
-    @GetMapping("/select")
-        public List<User> select(User user){
-        QueryWrapper queryWrapper =new QueryWrapper();
-        queryWrapper.eq("int",user.getId());
-        List list = userMapper.selectList(queryWrapper);
-        return list;
-    }
     /**
      *
      */
