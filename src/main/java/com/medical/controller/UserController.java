@@ -2,13 +2,25 @@ package com.medical.controller;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.medical.entity.User;
-import com.medical.service.UserService;
+
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import com.baomidou.mybatisplus.extension.api.R;
+import com.medical.entity.User;
+import com.medical.mapper.UserMapper;
+import com.medical.service.UserService;
 
-import org.springframework.web.bind.annotation.RestController;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpSession;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
@@ -50,6 +62,7 @@ public class UserController {
             map.put("data",list);
             return map;
         }
+
     }
 
 }

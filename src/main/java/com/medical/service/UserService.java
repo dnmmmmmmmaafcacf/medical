@@ -2,6 +2,9 @@ package com.medical.service;
 
 import com.medical.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,5 +16,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface UserService extends IService<User> {
     User loginUser(String username,String password);
+
 
 }
