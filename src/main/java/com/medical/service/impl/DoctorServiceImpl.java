@@ -25,7 +25,7 @@ public class DoctorServiceImpl extends ServiceImpl<DoctorMapper, Doctor> impleme
 
     //查询医生
     @Override
-    public List<Doctor> likeDoAndDH() {
-        return doctorMapper.likeDoAndDH();
+    public List<Doctor> likeDoAndDH(String dName) {
+        return doctorMapper.likeDoAndDH(dName);
     }
 }

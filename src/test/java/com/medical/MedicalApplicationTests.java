@@ -74,11 +74,11 @@ class MedicalApplicationTests {
 //        System.out.println(vipService.list());
     }
 
-    @Test
-    void Do(){
-        List<Doctor> dh = doctorService.likeDoAndDH();
-        System.out.println(dh);
-    }
+//    @Test
+//    void Do(){
+//        List<Doctor> dh = doctorService.likeDoAndDH();
+//        System.out.println(dh);
+//    }
 
 
 

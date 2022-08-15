@@ -13,6 +13,7 @@
         FROM doctor do,department d,hospital h
 
         WHERE do.did = d.id and d.hid = h.id
+        like d.d_name = #{dName}
     </select>
     <resultMap id="likeMap" type="doctor">
         <id property="id" column="id"></id>

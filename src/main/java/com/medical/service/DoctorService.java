@@ -15,5 +15,5 @@ import java.util.List;
  */
 public interface DoctorService extends IService<Doctor> {
     //查询医生
-    List<Doctor> likeDoAndDH();
+    List<Doctor> likeDoAndDH(String dName);
 }
