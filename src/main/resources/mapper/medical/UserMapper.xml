@@ -7,4 +7,5 @@
         update user set password=#{password} where tel=#{tel};
     </update>
 
+
 </mapper>

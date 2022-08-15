@@ -18,5 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class AdminController {
 
 
-//    1qqq
+
+
 }

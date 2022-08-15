@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+
 import java.util.Map;
 
 /**
@@ -24,6 +25,7 @@ import java.util.Map;
 @RequestMapping("/medical/user")
 public class UserController {
     @Autowired
+
     UserMapper userMapper;
 
     @Autowired
@@ -42,6 +44,7 @@ public class UserController {
             map.put("code",500);
             map.put("mag","修改失败");
             map.put("data",i);
+
             return map;
         }
 
