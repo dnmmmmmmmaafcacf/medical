@@ -8,4 +8,7 @@
     </update>
 
 
+    <select id="loginUser" resultType="user">
+        select * from user where username = #{username} and password = #{password};
+    </select>
 </mapper>

@@ -28,5 +28,6 @@ public interface UserMapper extends BaseMapper<User> {
     @Select("select * from user where tel=#{tel}")
     User selectTel(int tel);
 
+    User loginUser(String username,String password);
 
 }

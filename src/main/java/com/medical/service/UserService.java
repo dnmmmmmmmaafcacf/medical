@@ -18,8 +18,7 @@ import java.util.List;
  */
 public interface UserService extends IService<User> {
     User loginUser(String username,String password);
-<<<<<<< HEAD
-=======
+       
 
 
 
@@ -28,5 +27,6 @@ public interface UserService extends IService<User> {
 
 //    User selectTel(int tel);
 
->>>>>>> ef8f169dca45f32b7c6890052506b59d3e87fd73
+
+
 }
