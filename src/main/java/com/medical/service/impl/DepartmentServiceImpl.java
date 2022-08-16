@@ -24,7 +24,7 @@ public class DepartmentServiceImpl extends ServiceImpl<DepartmentMapper, Departm
     DepartmentMapper departmentMapper;
 
     @Override
-    public List<Department> likeDoAndDH(String dName) {
-        return departmentMapper.likeDoAndDH(dName);
+    public Department selHidAndName(String dName, int hid) {
+        return departmentMapper.selHidAndName(dName,hid);
     }
 }

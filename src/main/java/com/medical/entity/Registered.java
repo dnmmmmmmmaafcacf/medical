@@ -2,6 +2,7 @@ package com.medical.entity;
 
     import java.time.LocalDateTime;
     import java.io.Serializable;
+    import java.util.Date;
 
     import com.baomidou.mybatisplus.annotation.IdType;
     import com.baomidou.mybatisplus.annotation.TableId;
@@ -44,12 +45,16 @@ package com.medical.entity;
             * 预约时间
             */
             @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GTM+8")
-    private LocalDateTime appointment;
+    private Date appointment;
 
             /**
             * 预约单号
             */
     private String reservationNo;
+
+    private int did;
+    private int hid;
+    private int uid;
 
 
 }

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.medical.mapper.RegisteredMapper">
     <select id="getReg" resultMap="RegMap">
-        SELECT r.id,u.id,u.username,r.appointment,r.reservation_no
+        SELECT r.id,u.username,r.appointment,r.reservation_no
         from `user` u,hospital h,registered r,department d
         where r.uid = u.id and r.hid = h.id and r.did = d.id
         and r.uid = #{uid}
@@ -15,7 +15,17 @@
             <id property="id" column="id"></id>
             <result property="username" column="username"></result>
         </association>
-        <association property="hospital" column="hid" javaType="hospital"></association>
-        <association property="department" column="did" javaType="department"></association>
+        <association property="hospital" column="hid" javaType="hospital">
+            <id property="id" column="id"></id>
+            <result property="hName" column="h_name"></result>
+            <result property="address" column="address"></result>
+            <result property="hTel" column="h_tel"></result>
+            <result property="information" column="information"></result>
+        </association>
+        <association property="department" column="did" javaType="department">
+            <id property="id" column="id"></id>
+            <result property="dName" column="d_name"></result>
+            <result property="entryDate" column="Entry_date"></result>
+        </association>
     </resultMap>
 </mapper>

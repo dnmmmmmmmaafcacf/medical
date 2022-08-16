@@ -3,10 +3,7 @@ package com.medical;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.medical.entity.*;
-import com.medical.service.DoctorService;
-import com.medical.service.MunityService;
-import com.medical.service.UserService;
-import com.medical.service.VipService;
+import com.medical.service.*;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,10 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import javax.servlet.http.HttpSession;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 @SpringBootTest
 class MedicalApplicationTests {
@@ -29,6 +23,10 @@ class MedicalApplicationTests {
     UserService userService;
     @Autowired
     DoctorService doctorService;
+    @Autowired
+    RegisteredService registeredService;
+    @Autowired
+    DepartmentService departmentService;
 
     @Test
     void contextLoads() {
@@ -80,6 +78,11 @@ class MedicalApplicationTests {
 //        System.out.println(dh);
 //    }
 
+    @Test
+    void insert(){
+        Department list = departmentService.selHidAndName("核酸检测",1);
+        System.out.println(list.getDName());
+    }
 
 
 }

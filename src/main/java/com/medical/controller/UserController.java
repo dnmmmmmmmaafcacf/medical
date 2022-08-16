@@ -54,7 +54,6 @@ public class UserController {
             map.put("code",500);
             map.put("msg","登录失败");
             map.put("data",list);
-
             return map;
         } else {
             map.put("code",200);

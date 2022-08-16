@@ -15,5 +15,5 @@ import java.util.List;
  * @since 2022-08-11
  */
 public interface DepartmentService extends IService<Department> {
-    List<Department> likeDoAndDH(String dName);
+    Department selHidAndName(String dName,int hid);
 }

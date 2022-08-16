@@ -3,6 +3,7 @@ package com.medical.mapper;
 import com.medical.entity.Department;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.medical.entity.Doctor;
+import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
@@ -15,5 +16,6 @@ import java.util.List;
  * @since 2022-08-11
  */
 public interface DepartmentMapper extends BaseMapper<Department> {
-    List<Department> likeDoAndDH(String dName);
+    @Select("SELECT * FROM department WHERE d_name = #{dName} and hid = #{hid}")
+    Department selHidAndName(String dName,int hid);
 }

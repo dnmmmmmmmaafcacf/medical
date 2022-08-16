@@ -19,5 +19,6 @@ import java.util.List;
 @Repository
 public interface RegisteredMapper extends BaseMapper<Registered> {
     //查看我的预约
-    Registered getReg(int uid);
+    List<Registered> getReg(int uid);
+
 }
