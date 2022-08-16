@@ -16,6 +16,7 @@ import java.util.List;
  * @since 2022-08-11
  */
 public interface DepartmentMapper extends BaseMapper<Department> {
+    //查询科室名名称和医院id外键
     @Select("SELECT * FROM department WHERE d_name = #{dName} and hid = #{hid}")
     Department selHidAndName(String dName,int hid);
 }

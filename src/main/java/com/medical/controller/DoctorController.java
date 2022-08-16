@@ -29,13 +29,20 @@ public class DoctorController {
 
     //查询医生
     @RequestMapping("selDoctor")
-    public Map<String,Object> selDo(String dName){
-        List<Doctor> dh = doctorService.likeDoAndDH(dName);
+    public Map<String,Object> selDo(int did){
+        List<Doctor> dh = doctorService.likeDoAndDH(did);
         HashMap<String, Object> map = new HashMap<>();
-        map.put("code",200);
-        map.put("msg","查询成功");
-        map.put("data",dh);
-        return map;
+        if (dh.size()>0){
+            map.put("code",200);
+            map.put("msg","查询成功");
+            map.put("data",dh);
+            return map;
+        }else {
+            map.put("code",200);
+            map.put("msg","该科室没有医生");
+            return map;
+        }
+
     }
 
 }

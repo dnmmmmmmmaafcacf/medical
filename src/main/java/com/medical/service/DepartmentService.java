@@ -15,5 +15,6 @@ import java.util.List;
  * @since 2022-08-11
  */
 public interface DepartmentService extends IService<Department> {
+    //查询科室名名称和医院id外键
     Department selHidAndName(String dName,int hid);
 }

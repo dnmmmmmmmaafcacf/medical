@@ -2,6 +2,7 @@ package com.medical.entity;
 
     import java.time.LocalDateTime;
     import java.io.Serializable;
+    import java.util.List;
 
     import com.fasterxml.jackson.annotation.JsonFormat;
     import lombok.Data;
@@ -68,6 +69,9 @@ package com.medical.entity;
             * 问诊价格
             */
     private Float consultPrice;
+
+    private User user;
+
 
 
 }

@@ -53,7 +53,7 @@ public class RegisteredController {
         }
     }
 
-    //新增核酸检测
+    //预约核酸检测
     @PostMapping("insNuclein")
     public Map<String,Object> insNuclein(HttpSession session,Registered registered,int hid){
 
