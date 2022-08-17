@@ -19,6 +19,7 @@ package com.medical.entity;
     public class Drug implements Serializable {
 
     private static final long serialVersionUID = 1L;
+    private int id;
 
             /**
             * 药品名称
@@ -28,12 +29,12 @@ package com.medical.entity;
             /**
             * 描述
             */
-    private String describe;
+    private String describes;
 
             /**
             * 功能
             */
-    private String function;
+    private String functions;
 
             /**
             * 规格
@@ -43,12 +44,12 @@ package com.medical.entity;
             /**
             * 性状
             */
-    private String character;
+    private String characters;
 
             /**
             * 用法
             */
-    private String usage;
+    private String usages;
 
             /**
             * 成分

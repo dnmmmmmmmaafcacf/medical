@@ -2,6 +2,8 @@ package com.medical.entity;
 
     import java.time.LocalDateTime;
     import java.io.Serializable;
+
+    import com.fasterxml.jackson.annotation.JsonFormat;
     import lombok.Data;
     import lombok.EqualsAndHashCode;
     import lombok.experimental.Accessors;
@@ -20,11 +22,13 @@ package com.medical.entity;
     public class Review implements Serializable {
 
     private static final long serialVersionUID = 1L;
+    private int id;
 
     private Integer uid;
 
     private String review;
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GTM+8")
     private LocalDateTime reviewDate;
 
             /**
@@ -35,7 +39,7 @@ package com.medical.entity;
             /**
             * 药品id
             */
-    private String drid;
+    private int drid;
 
 
 }

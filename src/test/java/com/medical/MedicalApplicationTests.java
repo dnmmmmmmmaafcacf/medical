@@ -27,6 +27,10 @@ class MedicalApplicationTests {
     RegisteredService registeredService;
     @Autowired
     DepartmentService departmentService;
+    @Autowired
+    ReviewService reviewService;
+    @Autowired
+    DrugService drugService;
 
     @Test
     void contextLoads() {
@@ -82,6 +86,23 @@ class MedicalApplicationTests {
     void insert(){
         Department list = departmentService.selHidAndName("核酸检测",1);
         System.out.println(list.getDName());
+    }
+
+    @Test
+    void delReview(){
+        Review r = new Review();
+        QueryWrapper q = new QueryWrapper<>();
+
+        r.setMid(1);
+        if (r.getMid()==null){
+            q.eq("drid",1);
+            q.eq("id",2);
+        }else {
+            q.eq("mid",r.getMid());
+            q.eq("id",1);
+            reviewService.list(q);
+        }
+
     }
 
 

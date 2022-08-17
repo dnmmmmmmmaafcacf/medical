@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.medical.mapper.ReviewMapper">
-
+<!--    <select id="getMid" resultMap="midMap">-->
+<!--        SELECT * FROM review r,munity m,user u WHERE r.mid = m.id and r.uid = u.id-->
+<!--    </select>-->
+<!--    <resultMap id="midMap" type="review">-->
+<!--        <id property="id" column="id"></id>-->
+<!--        <association property="user" javaType="user">-->
+<!--            <result property="username" column="username"></result>-->
+<!--        </association>-->
+<!--    </resultMap>-->
 </mapper>
