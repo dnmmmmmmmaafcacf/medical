@@ -20,4 +20,6 @@ import java.util.List;
 public interface DoctorMapper extends BaseMapper<Doctor> {
     //根据科室id查询医生
     List<Doctor> likeDoAndDH(int did);
+    //查询在线医生
+    List<Doctor> getDoctorAndUser(String uState);
 }

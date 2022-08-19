@@ -2,15 +2,17 @@ package com.medical.controller;
 
 
 import com.medical.entity.Doctor;
+import com.medical.entity.User;
+import com.medical.result.R;
 import com.medical.service.DoctorService;
+import com.medical.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import javax.servlet.http.HttpSession;
+import java.util.*;
 
 /**
  * <p>
@@ -26,6 +28,8 @@ public class DoctorController {
 
     @Autowired
     DoctorService doctorService;
+    @Autowired
+    UserService userService;
 
     //查询医生
     @RequestMapping("selDoctor")
@@ -43,6 +47,14 @@ public class DoctorController {
             return map;
         }
 
+    }
+
+    @RequestMapping("/getDoctor")
+    public Object getDo(){
+        List<Doctor> doctorAndUser = doctorService.getDoctorAndUser("在线");
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("data",doctorAndUser);
+        return R.ok(map);
     }
 
 }

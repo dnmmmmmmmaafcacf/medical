@@ -42,4 +42,33 @@
             <result property="information" column="医院信息"></result>
         </association>
     </resultMap>
+
+    <select id="getDoctorAndUser" resultMap="DUMap">
+        SELECT *FROM user u,doctor d WHERE u.doid = d.id and u.u_state = #{uState}
+    </select>
+    <resultMap id="DUMap" type="doctor">
+        <id property="id" column="id"></id>
+        <result property="entryDate" column="Entry_date"></result>
+        <result property="title" column="title"></result>
+        <result property="brief" column="brief"></result>
+        <result property="point" column="point"></result>
+        <result property="hoursPractice" column="hours_practice"></result>
+        <result property="excel" column="excel"></result>
+        <result property="consultPrice" column="consult_price"></result>
+        <association property="user" javaType="user">
+            <id property="id" column="id"></id>
+            <result property="username" column="username"></result>
+            <result property="password" column="password"></result>
+            <result property="name" column="name"></result>
+            <result property="birthday" column="birthday"></result>
+            <result property="age" column="age"></result>
+            <result property="sex" column="sex"></result>
+            <result property="tel" column="tel"></result>
+            <result property="idcard" column="idcard"></result>
+            <result property="enrollDate" column="enroll_date"></result>
+            <result property="doid" column="doid"></result>
+            <result property="uState" column="u_state"></result>
+            <result property="vipId" column="vip_id"></result>
+        </association>
+    </resultMap>
 </mapper>

@@ -49,6 +49,8 @@ public class UserController {
 //        List list = userService.listObjs(q);
         User list = userService.loginUser(username,password);
         session.setAttribute("user",list);
+        session.setMaxInactiveInterval(1);
+
         HashMap<String, Object> map = new HashMap<>();
         if (list.equals("")){
             map.put("code",500);
@@ -56,6 +58,8 @@ public class UserController {
             map.put("data",list);
             return map;
         } else {
+            list.setUState("在线");
+            userService.updateById(list);
             map.put("code",200);
             map.put("msg","登录成功");
             map.put("data",list);
