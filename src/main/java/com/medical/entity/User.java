@@ -11,7 +11,6 @@ package com.medical.entity;
     import lombok.EqualsAndHashCode;
     import lombok.experimental.Accessors;
 
-    import javax.persistence.Table;
 
 /**
 * <p>
@@ -25,14 +24,12 @@ package com.medical.entity;
 
         @EqualsAndHashCode(callSuper = false)
     @Accessors(chain = true)
-    @Table(name = "user")
 
     public class User implements Serializable {
 
     @TableId(type = IdType.AUTO)
     private int id;
 
-    private int id;
 
     private String username;
 

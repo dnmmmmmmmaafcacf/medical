@@ -19,35 +19,33 @@ import java.util.List;
  * @since 2022-08-11
  */
 @Service
+
+public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
+@Autowired
+UserMapper userMapper;
+    public boolean isExist(String name){
+        User user = getByName(name);
+        return null!=user;
+    }
+
 public class UserServiceImpl extends ServiceImpl<UserMapper,User> implements UserService {
     @Autowired
-    private UserMapper userInfoMapper;
-
-
-    @Autowired
     UserMapper userMapper;
+
 
     @Override
     public User loginUser(String username, String password) {
         return userMapper.loginUser(username,password);
-
-    @Autowired
-    UserMapper userMapper;
+    }
 
     @Override
     public int userUpdate(User user) {
         return userMapper.userUpdate(user);
     }
-
-//    @Override
-//    public User selectTel(int tel) {
-//        return null;
-//    }
+ public User getByName(String name){
+        return userMapper.selectUser(name);
+    }
 
 
-//    @Override
-//    public User selectTel(int tel) {
-//        return userMapper.selectTel(tel);
-//    }
-
+   
 }
